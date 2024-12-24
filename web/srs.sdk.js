@@ -1,10 +1,4 @@
 
-//
-// Copyright (c) 2013-2021 Winlin
-//
-// SPDX-License-Identifier: MIT
-//
-
 'use strict';
 
 function SrsError(name, message) {
@@ -20,7 +14,6 @@ SrsError.prototype.constructor = SrsError;
 function SrsRtcPublisherAsync() {
     var self = {};
 
-    // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
     self.constraints = {
         audio: true,
         video: {

@@ -1,20 +1,3 @@
-###############################################################################
-#  Copyright (C) 2024 LiveTalking@lipku https://github.com/lipku/LiveTalking
-#  email: lipku@foxmail.com
-# 
-#  Licensed under the Apache License, Version 2.0 (the "License");
-#  you may not use this file except in compliance with the License.
-#  You may obtain a copy of the License at
-#  
-#       http://www.apache.org/licenses/LICENSE-2.0
-# 
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS,
-#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#  See the License for the specific language governing permissions and
-#  limitations under the License.
-###############################################################################
-
 # server.py
 from flask import Flask, render_template,send_from_directory,request, jsonify
 from flask_sockets import Sockets
@@ -461,19 +444,21 @@ if __name__ == '__main__':
         #     nerfreal = NeRFReal(opt, trainer, test_loader,audio_processor,audio_model)
         #     nerfreals.append(nerfreal)
     elif opt.model == 'musetalk':
-        from musereal import MuseReal,load_model,load_avatar
+        from musereal import MuseReal,load_model,load_avatar,warm_up
         print(opt)
         model = load_model()
-        avatar = load_avatar(opt.avatar_id)       
+        avatar = load_avatar(opt.avatar_id) 
+        warm_up(opt.batch_size,model)      
         # for k in range(opt.max_session):
         #     opt.sessionid=k
         #     nerfreal = MuseReal(opt,audio_processor,vae, unet, pe,timesteps)
         #     nerfreals.append(nerfreal)
     elif opt.model == 'wav2lip':
-        from lipreal import LipReal,load_model,load_avatar
+        from lipreal import LipReal,load_model,load_avatar,warm_up
         print(opt)
         model = load_model("./models/wav2lip.pth")
         avatar = load_avatar(opt.avatar_id)
+        warm_up(opt.batch_size,model,96)
         # for k in range(opt.max_session):
         #     opt.sessionid=k
         #     nerfreal = LipReal(opt,model)

@@ -1,7 +1,4 @@
-/*
-录音
-https://github.com/xiangyuecn/Recorder
-*/
+
 (function(factory){
 	factory(window);
 	//umd returnExports.js

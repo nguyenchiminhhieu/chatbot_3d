@@ -1,6 +1,4 @@
-# 使用NVIDIA的CUDA基础镜像
-#FROM nvidia/cuda:11.3.0-cudnn8-runtime-ubuntu18.04
-#FROM m11007322/cuda11.3.0-cudnn8-devel-ubuntu20.04-jupyterlab
+
 FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
 # 安装Python和pip
 RUN apt-get update && apt-get install -y --no-install-recommends \

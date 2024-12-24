@@ -1,11 +1,4 @@
-/*
-pcm编码器+编码引擎
-https://github.com/xiangyuecn/Recorder
 
-编码原理：本编码器输出的pcm格式数据其实就是Recorder中的buffers原始数据（经过了重新采样），16位时为LE小端模式（Little Endian），并未经过任何编码处理
-
-编码的代码和wav.js区别不大，pcm加上一个44字节wav头即成wav文件；所以要播放pcm就很简单了，直接转成wav文件来播放，已提供转换函数 Recorder.pcm2wav
-*/
 (function(){
 "use strict";
 

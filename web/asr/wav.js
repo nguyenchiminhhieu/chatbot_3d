@@ -1,13 +1,4 @@
-/*
-wav编码器+编码引擎
-https://github.com/xiangyuecn/Recorder
 
-当然最佳推荐使用mp3、wav格式，代码也是优先照顾这两种格式
-浏览器支持情况
-https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats
-
-编码原理：给pcm数据加上一个44直接的wav头即成wav文件；pcm数据就是Recorder中的buffers原始数据（重新采样），16位时为LE小端模式（Little Endian），实质上是未经过任何编码处理
-*/
 (function(){
 "use strict";
 
