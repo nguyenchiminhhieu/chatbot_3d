@@ -44,6 +44,6 @@ If you can't access HuggingFace, run it before
 export HF_ENDPOINT=https://hf-mirror.com
 ```
 
-Open the http://<serverip>:8010/rtcpushapi.html in a browser, enter any text in the text box, and submit. The digital human broadcasts the text  
+Open the http://'serverip':8010/rtcpushapi.html in a browser, enter any text in the text box, and submit. The digital human broadcasts the text  
 Note: The server needs to open port tcp: 8000, 8010, 1985; udp:8000
 ---
